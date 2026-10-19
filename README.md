@@ -2,7 +2,7 @@
 
 **I build tools that help AI agents understand code, debug failures, and work across real systems.**
 
-Senior software engineer in Madrid. My recent work spans execution recording, time-travel debuggers, agent harnesses, MCP integrations, and workflow automation. I work across TypeScript, Python, Go, and Java.
+Senior Systems Engineer, GenAI Operations. Based in Madrid. My recent work spans execution recording, time-travel debuggers, agent harnesses, MCP integrations, and workflow automation. I work across TypeScript, Python, Go, and Java.
 
 ## Runtime evidence for people and agents
 

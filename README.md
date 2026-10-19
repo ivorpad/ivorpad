@@ -1,26 +1,41 @@
 # Ivor
 
-Senior software engineer in Madrid. I build tools for AI agents: debuggers that expose what a program actually did, harnesses that enforce repository rules, and integrations that let agents work with real services.
+**I build tools that help AI agents understand code, debug failures, and work across real systems.**
 
-Most of my recent work is in **agent infrastructure, developer tools, and applied AI**. I work across TypeScript, Python, Go, and Java, from runtime instrumentation and IDE plugins to MCP servers and workflow integrations.
+Senior software engineer in Madrid. My recent work spans execution recording, time-travel debuggers, agent harnesses, MCP integrations, and workflow automation. I work across TypeScript, Python, Go, and Java.
 
-## Selected work
+## Runtime evidence for people and agents
 
-| Project | What I built |
+**[Pyokka](https://github.com/ivorpad/pyokka) · Python** and **[Tracelight](https://github.com/ivorpad/tracelight) · JavaScript / TypeScript**
+
+Two projects built around the same question: what did this program actually do? They expose live values, recorded execution, and debugging through VS Code, a browser interface, a CLI, and MCP. An agent can inspect a run, follow a value's history, or pause the program and investigate alongside you.
+
+[![Pyokka debugger driven from a terminal, with runtime values beside the code](https://raw.githubusercontent.com/ivorpad/pyokka/main/docs/media/pyokka.gif)](https://github.com/ivorpad/pyokka/blob/main/docs/media/pyokka.mp4)
+
+*Pyokka in action: an agent drives the debugger through function breakpoints and stepping while the editor shows the paused values. [Watch the video](https://github.com/ivorpad/pyokka/blob/main/docs/media/pyokka.mp4).*
+
+[Pyokka guide](https://github.com/ivorpad/pyokka/blob/main/docs/GUIDE.md) · [Tracelight runtime internals](https://github.com/ivorpad/tracelight/blob/main/docs/RUNTIME.md) · [Tracelight wire protocol](https://github.com/ivorpad/tracelight/blob/main/docs/PROTOCOL.md)
+
+## Agent infrastructure and applied AI
+
+| Project | What it does |
 | --- | --- |
-| **[Tracelight](https://github.com/ivorpad/tracelight)** | Execution recording, live debugging, and code history for JavaScript and TypeScript. A VS Code extension, browser interface, CLI, and MCP tools give people and agents access to runtime evidence. |
-| **[WorkDone](https://github.com/ivorpad/workdone)** | A ChatGPT plugin and MCP server for coordinating Claude Code, Codex, and Cursor agents across machines. Includes voice interaction, agent events, approval handling, and remote file and shell access. |
-| **[Farrier](https://github.com/ivorpad/farrier)** | Generates coding-agent harnesses from repository evidence: rules, hooks, verification commands, and context files. Includes behavioral checks and session analysis, with explicit limits on what the evaluations establish. |
-| **[Claude Agent SDK for n8n](https://github.com/ivorpad/n8n-nodes-claude-agent-sdk)** | Runs agent tasks inside self-hosted workflows, with multiple providers, session memory, human approvals, MCP tools, structured output, and persistence. |
-| **[Mercadona CLI](https://github.com/ivorpad/mercadona-cli)** | A Go CLI that lets agents search a real grocery catalog, inspect products, and manage a cart through structured output. Distributed as a standalone binary and through npm. |
-| **[Rewalk](https://github.com/ivorpad/rewalk)** | Records browser interactions and spoken feedback, then connects complaints to DOM changes and React components. Produces bug reports and replay artifacts a coding agent can use. |
+| **[WorkDone](https://github.com/ivorpad/workdone)** | Coordinates Claude Code, Codex, and Cursor agents across machines through ChatGPT and MCP. Voice interaction, persistent sessions, agent events, and approval handling. |
+| **[Farrier](https://github.com/ivorpad/farrier)** | Generates repository-specific agent harnesses with rules, tested guard hooks, and verification commands. Includes session analysis and evaluations that distinguish observed results from unproven benefits. |
+| **[Claude Agent SDK for n8n](https://github.com/ivorpad/n8n-nodes-claude-agent-sdk)** | Runs agent tasks inside self-hosted workflows, with multiple providers, memory, human approvals, MCP tools, structured output, and persistence. |
+| **[Mercadona CLI](https://github.com/ivorpad/mercadona-cli)** | Gives agents a structured interface to a real grocery service: product search, prices, and cart management. Written in Go and distributed as a standalone binary and through npm. |
 
-## More of the work behind those tools
+**[Rewalk](https://github.com/ivorpad/rewalk)** connects spoken feedback to DOM changes and React components, turning a recorded browser session into bug reports and replay artifacts a coding agent can use. [See the demo](https://github.com/ivorpad/rewalk/blob/main/assets/demo.mp4).
 
-**Debugging and agent context.** [Pyokka](https://github.com/ivorpad/pyokka) brings live values and time-travel debugging to Python. [PyCharm Debugger MCP](https://github.com/ivorpad/pycharm-debugger-mcp) exposes the IDE's debugger to agents. [sxr](https://github.com/ivorpad/sxr) searches Claude Code and Codex session histories; [transcript-reader](https://github.com/ivorpad/transcript-reader) provides a local reader for Claude Code sessions. [sk](https://github.com/ivorpad/sk) loads skills on demand instead of putting every skill into the initial context.
+<details>
+<summary>More tools for agent context, integrations, and verification</summary>
+
+**Debugging and agent context.** [PyCharm Debugger MCP](https://github.com/ivorpad/pycharm-debugger-mcp) exposes the IDE's debugger to agents. [sxr](https://github.com/ivorpad/sxr) searches Claude Code and Codex session histories; [transcript-reader](https://github.com/ivorpad/transcript-reader) provides a local reader for Claude Code sessions. [sk](https://github.com/ivorpad/sk) loads skills on demand instead of putting every skill into the initial context.
 
 **Tools agents can drive.** [agtcli](https://github.com/ivorpad/agent-cli-scaffold) is a runtime and scaffold for CLIs with explicit output contracts, failure codes, and credential handling. [har2cli](https://github.com/ivorpad/har2cli) turns browser network captures into redacted HTTP contracts and CLI scaffolds. [orly](https://github.com/ivorpad/orly) gives agents access to O'Reilly Answers with book citations.
 
 **Checks and integrations.** [konpy](https://github.com/ivorpad/konpy) enforces structural conventions in Python repositories. [CodeMie for n8n](https://github.com/ivorpad/n8n-nodes-claude-codemie) adds SSO proxy authentication to the Claude Agent SDK node. [Raycast Prompter](https://github.com/ivorpad/raycast-prompter) puts editable LLM writing prompts behind a keyboard shortcut.
 
 I also build Herdr plugins for [agent notifications](https://github.com/ivorpad/herdr-notify), [agent lifecycle management](https://github.com/ivorpad/herdr-reap), [local ports](https://github.com/ivorpad/herdr-ports), and [tunnels](https://github.com/ivorpad/herdr-tunnel).
+
+</details>
